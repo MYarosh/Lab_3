@@ -13,10 +13,10 @@ let YYY = document.getElementById("canvas-form:YYY");
 YYY.value = yyy;
 let counter;
 let table = document.getElementById("table-form:result-table").childNodes[3];
+handleRChange();
 drawArea(radius);
 drawAxis();
-drawResize();
-handleRChange();
+setTimeout(()=>drawResize(radius),10);
 
 function handleRChange(event) {
     clearCanvas();

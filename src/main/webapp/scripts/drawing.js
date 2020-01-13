@@ -110,7 +110,6 @@ function drawResize(radius) {
     counter = 0;
     console.log("RADIUS   "+radius);
     RRR.value = radius;
-    console.log("RADIUS"+radius);
     drawStep(radius);
 }
 
@@ -120,7 +119,9 @@ function drawStep(radius) {
         let row = table.children[counter];
         if(!row.children[0].innerText) return;
         let x = Number(row.children[0].innerText);
+        console.log(x);
         let y = Number(row.children[1].innerText);
+        console.log(y);
         xCanvas.value = x;
         yCanvas.value = y;
         counter++;
