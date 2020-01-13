@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.Set;
 
 @ManagedBean(name="data", eager = true)
 @ApplicationScoped
@@ -65,5 +66,28 @@ public class DataBean {
             p.reverseEdit();
         }
         else p.reverseEdit();
+    }
+
+    public void deletePoint(GraphInfo p){
+        Set<History> histories = p.getPointHistoryElements();
+        for (History h:histories){
+            deleteElement(h);
+        }
+        deletePointInDatabase(p);
+        points.remove(p);
+    }
+
+    public void deletePointInDatabase(GraphInfo p){
+        em.getTransaction().begin();
+        em.remove(p);
+        em.flush();
+        em.getTransaction().commit();
+    }
+
+    public void deleteElement(History element){
+        em.getTransaction().begin();
+        em.remove(element);
+        em.flush();
+        em.getTransaction().commit();
     }
 }

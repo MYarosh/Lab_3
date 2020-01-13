@@ -166,6 +166,13 @@
                 <p:commandButton styleClass="submit-button" action="#{data.updatePoint(p)}"
                                  rendered="#{p.edit}" value="Сохранить" disabled="#{!p.owner.equals(name.name)}" update="table-form" oncomplete="handleSubmit()"/>
             </h:column>
+            <h:column>
+                <f:facet name="header">
+                    Удаление
+                </f:facet>
+                <p:commandButton styleClass="submit-button" action="#{data.deletePoint(p)}"
+                                 value="Удалить" disabled="#{!p.owner.equals(name.name)}" update="table-form" oncomplete="handleSubmit()"/>
+            </h:column>
         </h:dataTable>
     </h:form>
     <br/>

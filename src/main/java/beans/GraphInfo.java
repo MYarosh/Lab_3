@@ -28,9 +28,6 @@ public class GraphInfo {
 
 
     public GraphInfo(Double r, String owner){
-        //System.out.println(r);
-        //System.out.println(x);
-        //System.out.println(y);
         this.pointHistoryElements = new LinkedHashSet<>();
         this.r = r;
         this.id = new Date().getTime();
