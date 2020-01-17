@@ -6,7 +6,7 @@
         <class>beans.GraphInfo</class>
         <class>beans.History</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/studs"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://pg:5432/studs"/>
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
             <property name="hibernate.connection.username" value="s265102"/>
             <property name="hibernate.connection.password" value="fbc327"/>
@@ -14,7 +14,7 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <!--property name="hibernate.hbm2ddl.auto" value="create"/-->
         </properties>
     </persistence-unit>
 </persistence>
